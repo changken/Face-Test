@@ -1,3 +1,7 @@
+/**
+ * green box three.js helper
+ */
+
 import * as THREE from 'three';
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
@@ -5,23 +9,42 @@ const renderer = new THREE.WebGLRenderer();
 
 const loader = new THREE.TextureLoader();
 loader.setPath('');
-const textureCube = loader.load(
-    ['face.png']
-)
-const textureCube2 = loader.load(
-    ['blank.png']
-)
+const textureCube = loader.load(['face.png']);
+const textureCube2 = loader.load(['blank.png']);
 const material = [
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube2,shininess:100 }),
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube2,shininess:100 }),
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube2,shininess:100 }),
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube2,shininess:100 }),
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube,shininess:100 }),
-    new THREE.MeshPhongMaterial({ color: 0x00ff00, map: textureCube2,shininess:100 })
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube2,
+    shininess: 100,
+  }),
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube2,
+    shininess: 100,
+  }),
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube2,
+    shininess: 100,
+  }),
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube2,
+    shininess: 100,
+  }),
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube,
+    shininess: 100,
+  }),
+  new THREE.MeshPhongMaterial({
+    color: 0x00ff00,
+    map: textureCube2,
+    shininess: 100,
+  }),
 ];
 
-
-renderer.setClearColor(new THREE.Color(0xffffff))
+renderer.setClearColor(new THREE.Color(0xffffff));
 renderer.setSize(200, 200);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -34,7 +57,7 @@ scene.add(light);
 const ambientLight = new THREE.AmbientLight(0x404040, 2); // soft white light
 scene.add(ambientLight);
 
-document.getElementById("display").appendChild(renderer.domElement);
+document.getElementById('display').appendChild(renderer.domElement);
 
 const geometry = new THREE.BoxGeometry();
 
@@ -54,14 +77,14 @@ window.faceXOffset = 0;
 window.faceYOffset = 0;
 window.faceZOffset = 0;
 
-let parameterDisplay = document.getElementById("parameters");
+let parameterDisplay = document.getElementById('parameters');
 
 function animate() {
-    requestAnimationFrame(animate);
-    cube.rotation.x = (window.faceXRotation - window.faceXOffset);
-    cube.rotation.y = (window.faceYRotation - window.faceYOffset);
-    cubeRoot.rotation.z = (window.faceZRotation - window.faceZOffset);
-    parameterDisplay.innerHTML = `
+  requestAnimationFrame(animate);
+  cube.rotation.x = window.faceXRotation - window.faceXOffset;
+  cube.rotation.y = window.faceYRotation - window.faceYOffset;
+  cubeRoot.rotation.z = window.faceZRotation - window.faceZOffset;
+  parameterDisplay.innerHTML = `
     x:${window.faceXRotation}
     y:${window.faceYRotation}
     z:${window.faceZRotation}
@@ -72,11 +95,8 @@ function animate() {
     Eye L:${window.EyeOpenL}
     Eye R:${window.EyeOpenR}
     Tranformed X:
-    `
-    renderer.render(scene, camera);
-
+    `;
+  renderer.render(scene, camera);
 }
-
-
 
 animate();
