@@ -1,3 +1,39 @@
+body{
+    background-color: aquamarine;
+}
+
+.fps{
+    display: none;
+}
+
+#parameters, #parameters2{
+    display: none;
+}
+
+#video-player{
+    display: none;
+}
+
+.video-source{
+    display: none;
+    margin-bottom: 10px;
+}
+
+#video-preview{
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 5%;
+}
+
+.mainbody{
+    display: flex;
+    justify-content: center;
+}
+
+.display-3d{
+    margin-right: 50px;
+}
 
 canvas.live2D{
     position: absolute;

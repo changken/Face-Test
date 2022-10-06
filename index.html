@@ -33,10 +33,24 @@
 
 <body>
 
-    <label for="fps">FPS: </label>
-    <div id="fps"></div>
+    <div class="fps">
+        <label for="fps">FPS: </label>
+        <div id="fps"></div>
+    </div>
+
+    <div class="mainbody">
+        <div class="display-3d">
+            <div id="display"></div>
+            <button id="calibrate">Calibrate</button>
+            <pre id="parameters" style="width: 100px ;"></pre>
+            <pre id="parameters2" style="width: 100px ;"></pre>
+        </div>
+    
+        <div class="canvas-container"></div>
+    </div>
+    
     <div id="video-preview">
-        <div>
+        <div class="video-source">
             <label>Select Camera Source</label>
             <select name="camera-source" id="camera-source"></select>
         </div>
@@ -44,16 +58,6 @@
             <video height="300" width="400" autoplay="true" id="video-player"></video>
             <canvas height="300" width="400" autoplay="true" id="canvas-preview"></video>
         </div>
-    </div>
-    <div class="display-3d">
-        <div id="display"></div>
-        <button id="calibrate">Calibrate</button>
-        <pre id="parameters" style="width: 100px ;"></pre>
-        <pre id="parameters2" style="width: 100px ;"></pre>
-    </div>
-
-    <div class="canvas-container">
-
     </div>
 </body>
 <script src="main.js"></script>
