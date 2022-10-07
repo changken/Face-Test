@@ -25,7 +25,11 @@ body{
     padding: 20px;
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 0px;
+}
+
+.video-view{
+    display: inline-block;
 }
 
 .mainbodyArea{
@@ -45,9 +49,9 @@ canvas.live2D{
 .canvas-container{
     padding: 30px;
     display: inline-block;
-    position: fixed;
+    /*position: fixed;
     bottom:0;
-    right:0;
+    right:0; */
 }
 
 
