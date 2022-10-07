@@ -2,19 +2,21 @@ body{
     background-color: aquamarine;
 }
 
-.fps{
+.fpsArea{
     display: none;
 }
 
-#parameters, #parameters2{
-    display: none;
+.display-3dArea{
+    /*display: inline-block;*/
+    display: none !important;
+    margin-right: 50px;
 }
 
 #video-player{
     display: none;
 }
 
-.video-source{
+.video-sourceArea{
     display: none;
     margin-bottom: 10px;
 }
@@ -23,16 +25,12 @@ body{
     padding: 20px;
     position: fixed;
     left: 0;
-    bottom: 5%;
+    bottom: 0;
 }
 
-.mainbody{
+.mainbodyArea{
     display: flex;
     justify-content: center;
-}
-
-.display-3d{
-    margin-right: 50px;
 }
 
 canvas.live2D{
@@ -47,6 +45,9 @@ canvas.live2D{
 .canvas-container{
     padding: 30px;
     display: inline-block;
+    position: fixed;
+    bottom:0;
+    right:0;
 }
 
 
@@ -56,9 +57,5 @@ div.character{
     border: 1px black solid;
     border-radius: 10px;
     background-color: aquamarine;
-    display: inline-block;
-}
-
-.display-3d{
     display: inline-block;
 }
